@@ -4,7 +4,8 @@ import json
 from streamlit_javascript import st_javascript
 
 x = 'await fetch("https://api.ipify.org?format=json").then(res=>res.json())'
-mob_ip = st_javascript(x).get("ip")
+mob_ip = st_javascript(x)
+mob_ip = mob_ip.get("ip")
 
 url = "https://air-aware-dun.vercel.app/aqi"
 
@@ -35,3 +36,4 @@ if st.button("Click"):
             st.error(f"Sorry for your loss.{e}")#for host error handling 
 
             
+
